@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import {Plus} from '@heroicons/react';
+import {Plus} from '@heroicons/react/24/solid';
 import { ShoppingCarContext } from '../../Context';
 function Card(data) {
     //const {count, setCount} = useContext(ShoppingCarContext);
@@ -13,6 +13,8 @@ function Card(data) {
 
     const addProductCart = (productData) => {
         context.setCount(context.count + 1)
+        context.openCartAsideMenu()
+        context.closeProductDetail()
         context.setCartProduct([...cartProduct, productData])
     }
     return(

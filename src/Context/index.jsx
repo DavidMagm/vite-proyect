@@ -7,10 +7,15 @@ export function ShoppingCarProvider({children}) {
     const [isProductDetailOpen, setIsProductDetailOpen] = useState(false);
     const openProductDetail = () => setIsProductDetailOpen(true);
     const closeProductDetail = () => setIsProductDetailOpen(false);
+
+    const [isCartAsideMenuOpen, setIsCartAsideMenuOpen] = useState(false);
+    const openCartAsideMenu = () => setIsCartAsideMenuOpen(true);
+    const closeCartAsideMenu = () => setIsCartAsideMenuOpen(false);
+
     const [productShow, setProductShow] = useState({})
     const [cartProduct, setCartProduct] = useState([])
     return (
-        <ShoppingCarContext.Provider value={{count,setCount, isProductDetailOpen, openProductDetail,closeProductDetail, productShow, setProductShow, cartProduct, setCartProduct}}>
+        <ShoppingCarContext.Provider value={{count,setCount, isProductDetailOpen, openProductDetail,closeProductDetail, productShow, setProductShow, cartProduct, setCartProduct, isCartAsideMenuOpen, openCartAsideMenu, closeCartAsideMenu}}>
             {children}
         </ShoppingCarContext.Provider>
     )

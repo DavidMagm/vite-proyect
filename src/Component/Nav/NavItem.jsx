@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import {NavLink} from 'react-router-dom';
-import {ShoppingCart} from '@heroicons/react';
+import {ShoppingCart} from '@heroicons/react/24/solid';
 import { ShoppingCarContext } from '../../Context';
 
 function ContextClick() {
