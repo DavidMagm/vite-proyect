@@ -8,6 +8,7 @@ import {SignIn} from '../SignIn';
 import {NavContainer} from '../../Component/Nav/NavContainer';
 import  { NavItem, menu2, menu1 } from '../../Component/Nav/NavItem';
 import { ShoppingCarProvider } from '../../Context';
+import { CartAsideMenu } from '../../Component/CartAsideMenu';
 import '../../App.css'
 
 
@@ -47,6 +48,7 @@ function App() {
             ))}
           </NavContainer>
           </nav>
+          <CartAsideMenu/>
       <AppRoutes/>
       </BrowserRouter>
     </ShoppingCarProvider>

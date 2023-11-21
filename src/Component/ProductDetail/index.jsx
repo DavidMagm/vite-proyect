@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import {XMark} from '@heroicons/react/24/solid';
+import {XMarkIcon} from '@heroicons/react/24/solid';
 import { ShoppingCarContext } from '../../Context';
 import "./style.css";
 function ProductDetail() {
@@ -9,7 +9,7 @@ function ProductDetail() {
         <aside className={`${context.isProductDetailOpen ? 'flex' : 'hidden'} product-detail flex-col bg-white border border-black fixed right-0 rounded-lg py-6`}>
             <div className="flex justify-between items-center">
                 <h2 className="font-medium font-xl">Detail</h2>
-                <XMark className="h-6 w-6 text-black" onClick={() => context.closeProductDetail()}></XMark>
+                <XMarkIcon className="h-6 w-6 text-black" onClick={() => context.closeProductDetail()}></XMarkIcon>
             </div>
             <figure className="px-6">
                 <img className="w-full h-full" src={context.productShow.image} alt={context.productShow.title}/>

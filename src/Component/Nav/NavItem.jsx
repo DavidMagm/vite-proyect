@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import {NavLink} from 'react-router-dom';
-import {ShoppingCart} from '@heroicons/react/24/solid';
+import {ShoppingCartIcon} from '@heroicons/react/24/solid';
 import { ShoppingCarContext } from '../../Context';
 
 function ContextClick() {
@@ -23,7 +23,7 @@ export let menu2 = [
     { to: '/myorders', text: 'My orders', className: ''},
     { to: '/myoccount', text: 'My occount', className: ''},
     { to: '/signin', text: 'Sign in', className: ''},
-    { to: '/shoppcar', text: <ShoppingCart/>, className: '', count: <ContextClick/>}
+    { to: '/shoppcar', text: <ShoppingCartIcon className="w-6 h-6"/>, className: '', count: <ContextClick/>}
   ]
 
 function NavItem(props) {
