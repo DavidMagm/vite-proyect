@@ -14,8 +14,9 @@ export function ShoppingCarProvider({children}) {
 
     const [productShow, setProductShow] = useState({})
     const [cartProduct, setCartProduct] = useState([])
+    const [order, setOrder] = useState([])
     return (
-        <ShoppingCarContext.Provider value={{count,setCount, isProductDetailOpen, openProductDetail,closeProductDetail, productShow, setProductShow, cartProduct, setCartProduct, isCartAsideMenuOpen, openCartAsideMenu, closeCartAsideMenu}}>
+        <ShoppingCarContext.Provider value={{count,setCount, isProductDetailOpen, openProductDetail,closeProductDetail, productShow, setProductShow, cartProduct, setCartProduct, isCartAsideMenuOpen, openCartAsideMenu, closeCartAsideMenu, order, setOrder}}>
             {children}
         </ShoppingCarContext.Provider>
     )

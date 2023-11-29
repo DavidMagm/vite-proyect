@@ -23,7 +23,7 @@ export let menu2 = [
     { to: '/myorders', text: 'My orders', className: ''},
     { to: '/myoccount', text: 'My occount', className: ''},
     { to: '/signin', text: 'Sign in', className: ''},
-    { to: '/shoppcar', text: <ShoppingCartIcon className="w-6 h-6"/>, className: '', count: <ContextClick/>}
+    { to: '/shoppcar', text: <ShoppingCartIcon className="w-6 h-6"/>, className: 'flex justify-between', count: <ContextClick/>}
   ]
 
 function NavItem(props) {
@@ -34,8 +34,9 @@ function NavItem(props) {
         <li className={props.className}>
             <NavLink to={`${props.to}`} 
             className={({isActive}) => isActive ? activeStyle : undefined}>
-                {props.text} {props.count}
+                {props.text} 
             </NavLink>
+            <span>{props.count}</span>
         </li>
     )
 }
