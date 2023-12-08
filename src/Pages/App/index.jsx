@@ -24,6 +24,7 @@ function AppRoutes() {
     {path: '/', element: <Home/>},
     {path: '/my-order', element: <MyOrder/>},
     {path: '/my-order/last', element: <MyOrder/>},
+    {path: '/my-order/:id', element: <MyOrder/>},
     {path: '/my-orders', element: <MyOrders/>},
     {path: '/my-account', element: <MyAccount/>},
     {path: '/sign-in', element: <SignIn/>},

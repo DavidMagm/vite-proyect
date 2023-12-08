@@ -6,8 +6,11 @@ import { ShoppingCarContext } from '../../Context';
 import { OrderCard } from '../../Component/OrderCard';
 
 function MyOrder() {
-    const {order} = useContext(ShoppingCarContext)
+    const {order} = useContext(ShoppingCarContext);
+    const currentPath = window.location.pathname;
+    let index = currentPath.substring(currentPath.lastIndexOf('/') + 1)
     //console.log(order);
+    if(index === 'last') index = order.length - 1
     return(
         <Layout>
             <div className="flex items-center justify-center mb-2 w-80 relative">
@@ -17,7 +20,7 @@ function MyOrder() {
                 <h1>My Order</h1>
             </div>
              <div className="flex flex-col w-80">
-                {order.slice(-1)[0].products.map(product => (
+                {order.index.products.map(product => (
                     <OrderCard key={product.id} title={product.title} image={product.image} price={product.price}/>
                 ))}
             </div>
