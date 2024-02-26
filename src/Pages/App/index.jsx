@@ -22,6 +22,12 @@ import '../../App.css'
 function AppRoutes() {
   let routes = useRoutes([
     {path: '/', element: <Home/>},
+    {path: '/all', element: <Home/>},
+    {path: '/clothes', element: <Home/>},
+    {path: '/electronics', element: <Home/>},
+    {path: '/furnitures', element: <Home/>},
+    {path: '/toys', element: <Home/>},
+    {path: '/others', element: <Home/>},
     {path: '/my-order', element: <MyOrder/>},
     {path: '/my-order/last', element: <MyOrder/>},
     {path: '/my-order/:id', element: <MyOrder/>},
@@ -41,7 +47,7 @@ function App() {
           <nav className="flex bg-white justify-between items-center w-full top-0 fixed z-10 text-sm font-ligth py-5 px-8">
           <NavContainer>
             {menu1.map(menu => (
-              <NavItem key={menu.text} to={menu.to} text={menu.text} className={menu.className}/>
+              <NavItem key={menu.text} to={menu.to} text={menu.text} className={menu.className} type={menu.type}/>
             ))}
           </NavContainer>
           <NavContainer>

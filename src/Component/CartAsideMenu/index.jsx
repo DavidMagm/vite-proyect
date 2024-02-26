@@ -33,7 +33,7 @@ function CartAsideMenu() {
             </div>
             <div className="px-4 overflow-y-scroll flex-1">
                 {cartProduct.map(product => (
-                    <OrderCard key={product.id} title={product.title} image={product.image} price={product.price} handleDelete={handleDelete}/>
+                    <OrderCard key={product.id} title={product.title} image={product.image} price={product.price} handleDelete={ handleDelete}/>
                 ))}
             </div>
 
