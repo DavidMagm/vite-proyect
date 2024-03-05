@@ -21,14 +21,14 @@ const rewindRender = () => {
         
         else {
             return(
-                <div>hola</div>
+                <div className='col-start-2 w-full text-black/80'>No se encuentra resultado</div>
             )
         }
 }
 
     return(
         <Layout>
-            <input className='w-80 border border-black rounded-lg mb-8 bg-slate-500 focus:outline-none' type="text" placeholder='Search' onChange={(event) => setSearchByTitle(event.target.value)}/>
+            <input className='rounded-lg border border-black w-80 p-4 mb-4 focus:outline-none' type="text" placeholder='Search' onChange={(event) => setSearchByTitle(event.target.value)}/>
             <div className="grid gap-4 grid-cols-4 w-full max-w-screen-lg">
                 {rewindRender()}
             </div>

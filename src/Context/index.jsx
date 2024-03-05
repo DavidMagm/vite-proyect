@@ -59,7 +59,7 @@ export function ShoppingCarProvider({children}) {
         }
     }, [items, searchByTitle, searchByCategory])
 
-    console.log(searchByCategory)
+    //console.log(searchByCategory)
 
     const [count, setCount] = useState(0)
     const [isProductDetailOpen, setIsProductDetailOpen] = useState(false);

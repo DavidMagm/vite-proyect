@@ -20,9 +20,9 @@ export let menu1 = [
 
 export let menu2 = [
     { to: '/email', text: 'example@gmail.com', className: 'text-black/60'},
-    { to: '/myorders', text: 'My orders', className: ''},
-    { to: '/myoccount', text: 'My occount', className: ''},
-    { to: '/signin', text: 'Sign in', className: ''},
+    { to: '/my-orders', text: 'My orders', className: ''},
+    { to: '/my-occount', text: 'My occount', className: ''},
+    { to: '/sign-in', text: 'Sign in', className: ''},
     { to: '/shoppcar', text: <ShoppingCartIcon className="w-6 h-6"/>, className: 'flex justify-between', count: <ContextClick/>}
   ]
 

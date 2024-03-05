@@ -18,8 +18,8 @@ function CartAsideMenu() {
         const orderObject = {
             date: "dia",
             products : cartProduct,
-            totalProduct: cartProduct.length,
-            total: totalPrice(cartProduct)
+            totalProducts: cartProduct.length,
+            totalPrice: totalPrice(cartProduct)
         };
 
         setOrder([...order, orderObject])
@@ -42,7 +42,7 @@ function CartAsideMenu() {
                     <span className="font-ligth">Total</span>
                     <span className="font-medium text-lg">{totalPrice(cartProduct)}</span>
                 </p>
-                <Link to="/my-order/last">
+                <Link to="/my-orders/last">
                     <div className="bg-black py-3 text-white cursor-pointer w-full rounded-lg" onClick={() => handleOrder()}>Checkout</div>
                 </Link>
             </div>
