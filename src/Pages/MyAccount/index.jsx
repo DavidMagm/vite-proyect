@@ -1,9 +1,25 @@
+import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { Layout } from "../../Component/Layout";
-
+import { ShoppingCarContext } from "../../Context";
 function MyAccount() {
+    const {dataUser} = useContext(ShoppingCarContext)
+
     return(
         <Layout>
-            MyAccount
+            <div className="flex flex-col w-80 mt-8">
+                <div className="flex w-full justify-between">
+                    <p>Email</p>
+                    <p className="ml-4">{dataUser.map((data, index) => (<span key={index}>{data.email}</span>))}</p>
+                </div>
+                <div className="flex w-full justify-between">
+                    <p>Password</p>
+                    <p className="ml-4">{dataUser.map((data,index) => (<span key={index}>{data.password}</span>))}</p>
+                </div>
+                <Link to="/" className="flex justify-center mt-4 bg-black text-white rounded-lg">
+                    <div>Log in</div>
+                </Link>
+            </div>
         </Layout>
     )
 }

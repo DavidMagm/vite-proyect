@@ -5,6 +5,7 @@ import {MyOrder} from '../MyOrder';
 import {MyOrders} from '../MyOrders';
 import {NotFound} from '../NotFound';
 import {SignIn} from '../SignIn';
+import { SignUp } from '../SingUp';
 import {NavContainer} from '../../Component/Nav/NavContainer';
 import  { NavItem, menu2, menu1 } from '../../Component/Nav/NavItem';
 import { ShoppingCarProvider } from '../../Context';
@@ -34,6 +35,7 @@ function AppRoutes() {
     {path: '/my-orders/:id', element: <MyOrder/>},
     {path: '/my-account', element: <MyAccount/>},
     {path: '/sign-in', element: <SignIn/>},
+    {path: '/sing-up', element: <SignUp/>},
     {path: '/*', element: <NotFound/>},
   ])
   return routes

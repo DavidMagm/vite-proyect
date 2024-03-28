@@ -2,11 +2,28 @@ import { useContext } from 'react';
 import {NavLink} from 'react-router-dom';
 import {ShoppingCartIcon} from '@heroicons/react/24/solid';
 import { ShoppingCarContext } from '../../Context';
+//import { data } from 'autoprefixer';
 
 function ContextClick() {
     const {cartProduct} = useContext(ShoppingCarContext);
     return cartProduct.length;
 }
+
+function ShowEmail() {
+    const {dataUser} = useContext(ShoppingCarContext)
+    const res = dataUser.map((data) => data.email == null ? '' : data.email)
+    return res
+}
+
+function Showsign() {
+    const {dataUser} = useContext(ShoppingCarContext)
+    if(dataUser.length == 0) {
+        return 'sign in'
+    } else {
+        return 'sign out'
+    }
+}
+
 
 export let menu1 = [
     { to: '/', text: 'Shopi', className: 'font-semibold text-lg'},
@@ -18,13 +35,18 @@ export let menu1 = [
     { to: '/others', text: 'others', className: '', type: 'category'},
   ]
 
+
 export let menu2 = [
-    { to: '/email', text: 'example@gmail.com', className: 'text-black/60'},
+    { to: '/email', text: <ShowEmail/>, className: 'text-black/60'},
     { to: '/my-orders', text: 'My orders', className: ''},
-    { to: '/my-occount', text: 'My occount', className: ''},
-    { to: '/sign-in', text: 'Sign in', className: ''},
+    { to: '/my-account', text: 'My account', className: ''},
+    { to: '/sign-in', text: <Showsign/>, className: ''},
     { to: '/shoppcar', text: <ShoppingCartIcon className="w-6 h-6"/>, className: 'flex justify-between', count: <ContextClick/>}
   ]
+
+
+
+
 
 function NavItem(props) {
     let activeStyle = 'underline underline-offset-4';

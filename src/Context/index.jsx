@@ -73,8 +73,12 @@ export function ShoppingCarProvider({children}) {
     const [productShow, setProductShow] = useState({})
     const [cartProduct, setCartProduct] = useState([])
     const [order, setOrder] = useState([])
-    return (
-        <ShoppingCarContext.Provider value={{items, count, setCount, isProductDetailOpen, openProductDetail,closeProductDetail, productShow, setProductShow, cartProduct, setCartProduct, isCartAsideMenuOpen, openCartAsideMenu, closeCartAsideMenu, order, setOrder, filterItems, setSearchByTitle, searchByTitle, searchByCategory, setSearchByCategory}}>
+    const [dataUser, setDataUser] = useState([])
+    const [newUserValueName, setNewUserValueName] = useState('')
+    const [newUserValueEmail, setNewUserValueEmail] = useState('')
+    const [newUserValuePassword, setNewUserValuePassword] = useState('')
+     return (
+        <ShoppingCarContext.Provider value={{items, count, setCount, isProductDetailOpen, openProductDetail,closeProductDetail, productShow, setProductShow, cartProduct, setCartProduct, isCartAsideMenuOpen, openCartAsideMenu, closeCartAsideMenu, order, setOrder, filterItems, setSearchByTitle, searchByTitle, searchByCategory, setSearchByCategory, dataUser, setDataUser, newUserValueName, setNewUserValueName, newUserValueEmail, setNewUserValueEmail, newUserValuePassword, setNewUserValuePassword}}>
             {children}
         </ShoppingCarContext.Provider>
     )
