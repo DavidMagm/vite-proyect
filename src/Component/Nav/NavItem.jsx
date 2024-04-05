@@ -9,20 +9,20 @@ function ContextClick() {
     return cartProduct.length;
 }
 
-function ShowEmail() {
-    const {dataUser} = useContext(ShoppingCarContext)
-    const res = dataUser.map((data) => data.email == null ? '' : data.email)
-    return res
-}
+// function ShowEmail() {
+//     const {dataUser} = useContext(ShoppingCarContext)
+//     const res = dataUser.map((data) => data.email == null ? '' : data.email)
+//     return res
+// }
 
-function Showsign() {
-    const {dataUser} = useContext(ShoppingCarContext)
-    if(dataUser.length == 0) {
-        return 'sign in'
-    } else {
-        return 'sign out'
-    }
-}
+// function Showsign() {
+//     const {dataUser} = useContext(ShoppingCarContext)
+//     if(dataUser.length == 0) {
+//         return 'sign in'
+//     } else {
+//         return 'sign out'
+//     }
+// }
 
 
 export let menu1 = [
@@ -37,10 +37,10 @@ export let menu1 = [
 
 
 export let menu2 = [
-    { to: '/email', text: <ShowEmail/>, className: 'text-black/60'},
+    { to: '/email', text: '', className: 'text-black/60'},
     { to: '/my-orders', text: 'My orders', className: ''},
     { to: '/my-account', text: 'My account', className: ''},
-    { to: '/sign-in', text: <Showsign/>, className: ''},
+    { to: '/sign-in', text: 'sign in', className: ''},
     { to: '/shoppcar', text: <ShoppingCartIcon className="w-6 h-6"/>, className: 'flex justify-between', count: <ContextClick/>}
   ]
 
@@ -50,10 +50,15 @@ export let menu2 = [
 
 function NavItem(props) {
     let activeStyle = 'underline underline-offset-4';
-    const {setSearchByCategory} = useContext(ShoppingCarContext)
+    const {setSearchByCategory, setSignOut, signOut} = useContext(ShoppingCarContext)
+
+    const handleSignOut = () => {
+        localStorage.setItem('sign-out', JSON.stringify(signOut))
+        setSignOut(true)
+    }
     
     return(
-        <li className={props.className}>
+        <li className={props.className} onClick={props.to == '/sign-in'? handleSignOut() : null}>
             <NavLink to={`${props.to}`} 
             className={({isActive}) => isActive ? activeStyle : undefined}
             onClick={() => props.type ? setSearchByCategory(props.text): setSearchByCategory(false)}>

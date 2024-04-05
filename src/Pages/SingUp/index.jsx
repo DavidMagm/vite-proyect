@@ -5,8 +5,14 @@ import { ShoppingCarContext } from "../../Context";
 
 function SignUp() {
 
-    const {dataUser, setDataUser, newUserValueName, setNewUserValueName, newUserValueEmail, setNewUserValueEmail, newUserValuePassword, setNewUserValuePassword} = useContext(ShoppingCarContext)
+    const {dataUser, setDataUser, newUserValueName, setNewUserValueName, newUserValueEmail, setNewUserValueEmail, newUserValuePassword, setNewUserValuePassword, setSignOut} = useContext(ShoppingCarContext)
 
+
+    const handleSignIn = () => {
+        const stringFalseOut = JSON.stringify(false)
+        localStorage.setItem('sign-out', stringFalseOut)
+        setSignOut(false)
+    }
     const saveDataUser = () => {
         const objDataUser = {
             name: newUserValueName,
