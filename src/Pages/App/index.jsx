@@ -7,7 +7,7 @@ import {NotFound} from '../NotFound';
 import {SignIn} from '../SignIn';
 import { SignUp } from '../SingUp';
 import {NavContainer} from '../../Component/Nav/NavContainer';
-import  { NavItem, menu2, menu1 } from '../../Component/Nav/NavItem';
+import  { NavItem, menu2, menu1, menu3 } from '../../Component/Nav/NavItem';
 import { ShoppingCarProvider } from '../../Context';
 import { CartAsideMenu } from '../../Component/CartAsideMenu';
 import '../../App.css'
@@ -41,7 +41,26 @@ function AppRoutes() {
   return routes
 }
 
+const localSignOut = localStorage.getItem('sign-out');
+const parsedSignOut = JSON.stringify(localSignOut);
+isUserSignOut = localSignOut || parsedSignOut
+
+
 function App() {
+  
+  const condicionalNav = () => {
+    if(isUserSignOut) {
+      return (
+        menu3.map(menu => (
+          <NavItem key={menu.id} text={menu.text} className={menu.className}/>
+        ))
+      )
+    } else {
+      menu2.map(menu => (
+        <NavItem key={menu.text} to={menu.to} text={menu.text} className={menu.className} count={menu.count}/>
+      ))
+    }
+  }
 
   return (
     <ShoppingCarProvider>
@@ -53,9 +72,7 @@ function App() {
             ))}
           </NavContainer>
           <NavContainer>
-          {menu2.map(menu => (
-              <NavItem key={menu.text} to={menu.to} text={menu.text} className={menu.className} count={menu.count}/>
-            ))}
+          {condicionalNav()}
           </NavContainer>
           </nav>
           <CartAsideMenu/>

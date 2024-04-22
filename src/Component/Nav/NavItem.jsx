@@ -40,9 +40,18 @@ export let menu2 = [
     { to: '/email', text: '', className: 'text-black/60'},
     { to: '/my-orders', text: 'My orders', className: ''},
     { to: '/my-account', text: 'My account', className: ''},
-    { to: '/sign-in', text: 'sign in', className: ''},
+    { to: '/sign-in', text: 'sign out', className: ''},
     { to: '/shoppcar', text: <ShoppingCartIcon className="w-6 h-6"/>, className: 'flex justify-between', count: <ContextClick/>}
   ]
+
+
+export let menu3 = [
+    { id: 1, text: '', className: 'text-black/60'},
+    { id: 2, text: '', className: ''},
+    { id: 3, text: '', className: ''},
+    { id: 4, text: 'sign in', className: ''},
+    { id: 5, text: '', className: 'flex justify-between'}
+]
 
 
 
@@ -53,7 +62,7 @@ function NavItem(props) {
     const {setSearchByCategory, setSignOut, signOut} = useContext(ShoppingCarContext)
 
     const handleSignOut = () => {
-        localStorage.setItem('sign-out', JSON.stringify(signOut))
+        localStorage.setItem('sign-out', JSON.stringify(true))
         setSignOut(true)
     }
     

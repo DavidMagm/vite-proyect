@@ -75,7 +75,9 @@ export function ShoppingCarProvider({children}) {
     const [order, setOrder] = useState([])
 
     const localData = localStorage.getItem('DATA_USER')
+    const localSignOut = localStorage.getItem('sign-out')
     let parsedData;
+    let parsedSignOut;
 
     if(!localData) {
         localStorage.setItem('DATA_USER', JSON.stringify([]))
@@ -84,7 +86,13 @@ export function ShoppingCarProvider({children}) {
         parsedData = JSON.parse(localData)
     }
 
-    const localSignOut = localStorage.getItem('sign-out')
+    if(!localSignOut) {
+        localStorage.setItem('sign-out', JSON.stringify(false))
+        parsedSignOut = false
+    } else {
+        parsedSignOut = JSON.parse(localSignOut)
+    }
+
 
     const [dataUser, setDataUser] = useState(parsedData)
     const [signOut, setSignOut] = useState(false)
