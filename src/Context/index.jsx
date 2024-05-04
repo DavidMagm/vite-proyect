@@ -98,7 +98,6 @@ export function ShoppingCarProvider({children}) {
     const [signOut, setSignOut] = useState(false)
 
     //localStorage.setItem('DATA_USER', JSON.stringify(dataUser))
-    
 
     const [newUserValueName, setNewUserValueName] = useState('')
     const [newUserValueEmail, setNewUserValueEmail] = useState('')
