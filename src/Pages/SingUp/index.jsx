@@ -16,7 +16,6 @@ function SignUp() {
             password: newUserValuePassword
         }
 console.log('se esta enviando el obj')
-console.log(objDataUser)
         localStorage.setItem('DATA_USER', JSON.stringify(objDataUser))
         setDataUser([...dataUser, objDataUser])
         setNewUserValueEmail('')
