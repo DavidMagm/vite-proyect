@@ -8,11 +8,7 @@ function SignUp() {
     const {dataUser, setDataUser, newUserValueName, setNewUserValueName, newUserValueEmail, setNewUserValueEmail, newUserValuePassword, setNewUserValuePassword, setSignOut} = useContext(ShoppingCarContext)
 
 
-    const handleSignIn = () => {
-        const stringFalseOut = JSON.stringify(false)
-        localStorage.setItem('sign-out', stringFalseOut)
-        setSignOut(false)
-    }
+    
     const saveDataUser = () => {
         const objDataUser = {
             name: newUserValueName,
@@ -20,6 +16,8 @@ function SignUp() {
             password: newUserValuePassword
         }
 console.log('se esta enviando el obj')
+console.log(objDataUser)
+        localStorage.setItem('DATA_USER', JSON.stringify(objDataUser))
         setDataUser([...dataUser, objDataUser])
         setNewUserValueEmail('')
         setNewUserValueName('')

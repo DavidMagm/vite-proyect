@@ -9,21 +9,6 @@ function ContextClick() {
     return cartProduct.length;
 }
 
-// function ShowEmail() {
-//     const {dataUser} = useContext(ShoppingCarContext)
-//     const res = dataUser.map((data) => data.email == null ? '' : data.email)
-//     return res
-// }
-
-// function Showsign() {
-//     const {dataUser} = useContext(ShoppingCarContext)
-//     if(dataUser.length == 0) {
-//         return 'sign in'
-//     } else {
-//         return 'sign out'
-//     }
-// }
-
 
 export let menu1 = [
     { to: '/', text: 'Shopi', className: 'font-semibold text-lg'},
@@ -49,7 +34,7 @@ export let menu3 = [
     { id: 1, text: '', className: 'text-black/60'},
     { id: 2, text: '', className: ''},
     { id: 3, text: '', className: ''},
-    { id: 4, text: 'sign in', className: ''},
+    { id: 4, to: '/sign-in', text: 'Sign in', className: ''},
     { id: 5, text: '', className: 'flex justify-between'}
 ]
 
@@ -67,7 +52,7 @@ function NavItem(props) {
     }
     
     return(
-        <li className={props.className} onClick={props.to == '/sign-in'? handleSignOut() : null}>
+        <li className={props.className} onClick={() => props.text == 'sign out'? handleSignOut() : null}>
             <NavLink to={`${props.to}`} 
             className={({isActive}) => isActive ? activeStyle : undefined}
             onClick={() => props.type ? setSearchByCategory(props.text): setSearchByCategory(false)}>
